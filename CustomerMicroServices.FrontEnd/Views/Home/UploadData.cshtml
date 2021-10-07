@@ -1,11 +1,10 @@
 ﻿@model UploadDataCommand
 @{
-
+    ViewData["Title"] = "Order receive page";
 }
 
 <div>
-    <img src="~/images/faceslogo.png" />
-    <h2></h2>
+    <h2>Upload image</h2>
 </div>
 <form asp-controller="Home" asp-action="UploadData" enctype="multipart/form-data">
     <div class="row">
@@ -20,10 +19,10 @@
             <p>Upload your image file using the button below</p>
             <input type="file" name="file" id="imageBrowse" />
         </div>
-        <div id="imgPreview" class="thumbnail" style="display:none">
-            <img class="img-responsive" id="targeting"/>
-            <div class="caption">
-                <a href="#" onClic="ClearPreview()">
+        <div id="imgPreview" class="img-thumbnail">
+            <img class="img-fluid" id="targetImg" src="" />
+            <div class="figure-caption">
+                <a href="#" onClick="ClearPreview()">
                     <i class="glyphicon glyphicon-trash"></i>
                     <span id="description"></span>
                 </a>
@@ -55,7 +54,7 @@
             reader.onload = function(targetFile) {
 
                 image.src = targetFile.target.result;
-                image.upload = function() {
+                image.onload = function() {
 
                     var height = this.height;
                     var width = this.width;

@@ -1,15 +1,12 @@
-﻿using CustomerMicroServices.FrontEnd.Models;
+﻿using CustomerMicroServices.FrontEnd.Events;
+using CustomerMicroServices.FrontEnd.Models;
+using Dapr.Client;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
-using CustomerMicroServices.FrontEnd.Events;
-using Dapr.Client;
-using Microsoft.AspNetCore.Mvc.Abstractions;
 
 namespace CustomerMicroServices.FrontEnd.Controllers
 {
